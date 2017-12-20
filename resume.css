@@ -1,14 +1,17 @@
 /* 初始化 style */
-*{
+/* *{
   margin: 0;
   padding: 0;
-}
+} */
 body{
   background-color: black;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 a{
   text-decoration: none;
+  color: white;
 }
 /* clearfix */
 .clearfix::after{
@@ -47,6 +50,7 @@ a{
 /* topNavBar nav style */
 .topNavBar > nav > ul{
   list-style: none;
+  margin: 0;
   /* border: 1px solid white;  */
 }
 .topNavBar > nav > ul > li{
