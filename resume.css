@@ -1,0 +1,67 @@
+/* 初始化 style */
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: black;
+  color: white;
+}
+a{
+  text-decoration: none;
+}
+/* clearfix */
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix > li{
+  float: left;
+}
+.clearfix > nav{
+  float: right;
+}
+
+/* topNavBar style */
+.topNavBar{
+  padding: 20px 15px;
+}
+/* topNavBar logo style */
+.topNavBar > .logo > .rs ,
+.topNavBar > .logo > .card{
+  font-size: 30px;
+  font-weight: 800;
+  font-style: normal;
+  font-family: "Arial Black"; 
+  display: inline-block;
+  
+}
+.topNavBar>.logo> .rs{
+  color: #E8676B;
+}
+.topNavBar>.logo> .card{
+  color: #9A9DA2;
+  margin-left: 3px;
+}
+/* topNavBar nav style */
+.topNavBar > nav > ul{
+  list-style: none;
+  /* border: 1px solid white;  */
+}
+.topNavBar > nav > ul > li{
+  margin: 0px 17px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.topNavBar > nav > ul > li:hover{
+  border-bottom: 3px solid #E8676B;
+}
+.topNavBar > nav > ul > li > a{
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #CCCED1;
+  padding: 12px 0px;
+  /* border: 1px solid blue; */
+}
