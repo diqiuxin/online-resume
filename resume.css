@@ -1,21 +1,21 @@
-/* 初始化 style */
+/* initial style */
 *{
   margin: 0;
   padding: 0;
-}
-hr{
-  width: 100%;
-  border-style: none;
-  border-top: 1px solid #DEDEDE;
 }
 body{
   background-color: #EFEFEF;
   color: black;
 }
+hr{ 
+  border: none;
+  border-top: 1px solid #DEDEDE;
+}
 a{
   text-decoration: none;
   color: white;
 }
+
 /* clearfix */
 .clearfix::after{
   content: "";
@@ -50,7 +50,6 @@ a{
   font-style: normal;
   font-family: "Arial Black"; 
   display: inline-block;
-  
 }
 .topNavBar .logo> .rs{
   color: #E8676B;
@@ -59,6 +58,7 @@ a{
   color: #9A9DA2;
   margin-left: 3px;
 }
+
 /* topNavBar nav style */
 .topNavBar nav > ul{
   list-style: none;
@@ -99,6 +99,7 @@ div.banner > .mask{
   max-width: 942px;
   margin: 0px auto;
 }
+
 /* userCard style */
 .userCard > .picture-text{
   padding: 58px 50px 40px 50px;
@@ -113,6 +114,7 @@ div.banner > .mask{
   float: left;
 }
 
+/* text "hello" style */
 .userCard > .picture-text > .text{
   margin-left: 60px;
   width: 480px;
@@ -136,6 +138,8 @@ div.banner > .mask{
   border-top-width: 0px;
   border-left-color: #E8676B;
 }
+
+/* text style */
 .userCard > .picture-text > .text h1{
   margin-bottom: 8px; 
 }
@@ -148,7 +152,6 @@ div.banner > .mask{
   margin-top: 25px;
   padding-top: 25px;
 }
-
 .userCard > .picture-text > .text dl{
   line-height: 30px;
 }
@@ -157,14 +160,11 @@ div.banner > .mask{
   float: left;
   font-size: 14px;
   display: inline-block;
-  
-
 }
 .userCard > .picture-text > .text dl dt{
   width: 30%;
   font-weight: 700;
 }
-
 .userCard > .picture-text > .text dl dd{
   width: 70%;
   color: #9da0a7;
@@ -189,11 +189,11 @@ div.banner > .mask{
   background-color: #D05C60;
 }
 .userCard > .media > a > svg{
-  fill: white;
-  height: 20px; 
-  width: 20px;
+  color: white;
+  /* fill: white; */
+  font-size: 20px;
+  /* height: 20px;  */
+  /* width: 20px; */
   vertical-align: top;
   /* border: 1px solid black; */
 }
-
-
