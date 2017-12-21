@@ -19,7 +19,7 @@
 <body>
   <!-- 顶部导航条 -->
   <div class="topNavBar">
-    <div class="topNavBar-inner clearfix">
+    <div class="topNavBarInner clearfix">
       <a class="logo" href="#" alt="logo">
         <span class="rs">RS</span><span class="card">card</span>
       </a>
@@ -43,7 +43,7 @@
   <!-- 主要内容 -->
   <main>
     <div class="userCard">
-      <div class="picture-text clearfix">
+      <div class="pictureText clearfix">
         <div class="picture">
             <img src="./img/avatar.jpg" alt="头像">
         </div>
@@ -100,41 +100,57 @@
         </a>
       </div>
     </div>
-    <a href="#" class="button">下载 PDF 简历</a>
-    <p>
+    <p class="downloadWarpper">
+      <a class="download" href="./resume.pdf" target="_blank" download="">下载 PDF 简历</a>
+    </p>
+    <p class="selfIntroduction">
       赵博，一个信奉科技的大四狗。 <br>
       技能：正在学习中 :)
     </p>
   </main>
   <!-- 技能部分 -->
-  <section>
+  <section class="skills">
     <h2>技能</h2>
-    <ol>
-      <li>HTML 5 &amp; CSS 3</li>
-      <li>JavaScript</li>
-      <li>JQuery</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>HTTP</li>
-    </ol>
+    <div>
+      <ol class="clearfix">
+        <li>HTML 5 &amp; CSS 3</li>
+        <li>JavaScript</li>
+        <li>JQuery</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>HTTP</li>
+      </ol>
+    </div>
   </section>
   <!-- 作品部分 -->
-  <section>
+  <section class="productions">
     <h2>作品集</h2>
     <nav>
-      <ol>
-        <li>所有</li>
-        <li>框架</li>
-        <li>原生JS &amp; CSS</li>
+      <ol class="clearfix">
+        <li id="production1">所有</li>
+        <li id="production2">框架</li>
+        <li id="production3">原生JS &amp; CSS</li>
       </ol>
+      <div class="bar">
+        <div class="bar-inner bar-inner-1" id="productionBar"></div>
+      </div>
     </nav>
-
-    <div class="jods">
+    <div class="jobs">d
       <div class="big"></div>
-      <div class="small"></div>
-      <div class="small"></div>
+      <div class="small small-1"></div>
+      <div class="small small-2"></div>
     </div>
-
   </section>
+  <script>
+    production1.onclick = function(){
+      productionBar.className = "bar-inner bar-inner-1";
+    }
+    production2.onclick = function(){
+      productionBar.className = "bar-inner bar-inner-2";
+    }
+    production3.onclick = function(){
+      productionBar.className = "bar-inner bar-inner-3";
+    }
+  </script>
 </body>
 </html>
