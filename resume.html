@@ -6,41 +6,56 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Online Resume</title>
   <link rel="stylesheet" href="./resume.css">
+  <script src="./iconfont.js"></script>
+  <style type="text/css">
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+  </style>
 </head>
 <body>
   <!-- 顶部导航条 -->
-  <div class="topNavBar clearfix">
-    <a class="logo" href="#" alt="logo">
-      <span class="rs">RS</span><span class="card">card</span>
-    </a>
-    <nav class="">
-      <ul class="clearfix">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">作品</a></li>
-        <li><a href="#">博客</a></li>
-        <li><a href="#">日历</a></li>
-        <li><a href="#">联系方式</a></li>
-        <li><a href="#">其他</a></li>
-      </ul> 
-    </nav>
+  <div class="topNavBar">
+    <div class="topNavBar-inner clearfix">
+      <a class="logo" href="#" alt="logo">
+        <span class="rs">RS</span><span class="card">card</span>
+      </a>
+      <nav class="">
+        <ul class="clearfix">
+          <li><a href="#">关 于</a></li>
+          <li><a href="#">技 能</a></li>
+          <li><a href="#">作 品</a></li>
+          <li><a href="#">博 客</a></li>
+          <li><a href="#">日 历</a></li>
+          <li><a href="#">联 系 方 式</a></li>
+          <li><a href="#">其 他</a></li>
+        </ul> 
+      </nav>
+    </div>
   </div>
   <!-- 广告牌 -->
-  <div class="banner"></div>
+  <div class="banner">
+    <div class="mask"></div>
+  </div>
   <!-- 主要内容 -->
   <main>
-    <div class="card">
-      <div class="picture-text">
+    <div class="userCard">
+      <div class="picture-text clearfix">
         <div class="picture">
-          <img src="" alt="头像">
+            <img src="./img/avatar.jpg" alt="头像">
         </div>
         <div class="text">
           <div class="profile">
-            <span class="welcome">Hello</span>
+            <span class="welcome">HELLO
+              <span class="triangle"></span>
+            </span>
             <h1>赵博</h1>
             <p>前端开发工程师</p>
             <hr>
-            <dl>
+            <dl class="clearfix">
               <dt>年龄</dt>
               <dd>23</dd>
               <dt>所在城市</dt>
@@ -49,18 +64,40 @@
               <dd>zhaoboworks@Gmail.com</dd>
               <dt>手机</dt>
               <dd>18292001928</dd>
+              <dt>QQ</dt>
+              <dd>501993589</dd>
+              <dt>个人网站</dt>
+              <dd>www.diqiuxin.top</dd>
             </dl>
           </div>
         </div>
       </div>
       <div class="media">
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a>
-        <a href="#"><img src="#" alt="."></a> 
+        <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-icongithub"></use>
+            </svg>
+        </a>
+        <a href="#">
+            <svg class="icon" aria-hidden="true" >
+              <use xlink:href="#icon-tuite"></use>
+            </svg>
+        </a>
+        <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo"></use>
+            </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-shuyuanjianjie"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ggerenwangzhan"></use>
+          </svg>
+        </a>
       </div>
     </div>
     <a href="#" class="button">下载 PDF 简历</a>

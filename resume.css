@@ -1,13 +1,16 @@
 /* 初始化 style */
-/* *{
+*{
   margin: 0;
   padding: 0;
-} */
+}
+hr{
+  width: 100%;
+  border-style: none;
+  border-top: 1px solid #DEDEDE;
+}
 body{
-  background-color: black;
-  color: white;
-  margin: 0;
-  padding: 0;
+  background-color: #EFEFEF;
+  color: black;
 }
 a{
   text-decoration: none;
@@ -28,11 +31,20 @@ a{
 
 /* topNavBar style */
 .topNavBar{
-  padding: 20px 15px;
+  padding: 20px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* border: 1px solid red; */
 }
+.topNavBar-inner{
+  padding: 0px 15px;
+}
+
 /* topNavBar logo style */
-.topNavBar > .logo > .rs ,
-.topNavBar > .logo > .card{
+.topNavBar .logo > .rs ,
+.topNavBar .logo > .card{
   font-size: 30px;
   font-weight: 800;
   font-style: normal;
@@ -40,28 +52,27 @@ a{
   display: inline-block;
   
 }
-.topNavBar>.logo> .rs{
+.topNavBar .logo> .rs{
   color: #E8676B;
 }
-.topNavBar>.logo> .card{
+.topNavBar .logo> .card{
   color: #9A9DA2;
   margin-left: 3px;
 }
 /* topNavBar nav style */
-.topNavBar > nav > ul{
+.topNavBar nav > ul{
   list-style: none;
-  margin: 0;
   /* border: 1px solid white;  */
 }
-.topNavBar > nav > ul > li{
+.topNavBar nav > ul > li{
   margin: 0px 17px;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
 }
-.topNavBar > nav > ul > li:hover{
+.topNavBar nav > ul > li:hover{
   border-bottom: 3px solid #E8676B;
 }
-.topNavBar > nav > ul > li > a{
+.topNavBar nav > ul > li > a{
   display: block;
   font-size: 13px;
   font-weight: 700;
@@ -69,3 +80,120 @@ a{
   padding: 12px 0px;
   /* border: 1px solid blue; */
 }
+
+/* banner style section */
+div.banner{
+  background-image: url("./img/banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  /* border: 1px solid red; */
+  height: 520px;
+}
+div.banner > .mask{
+  background-color: rgba(0,0,0,0.7);
+  height: 520px;
+}
+.userCard{
+  /* border: 1px solid red; */
+  background-color: #FFFFFF;
+  max-width: 942px;
+  margin: 0px auto;
+}
+/* userCard style */
+.userCard > .picture-text{
+  padding: 58px 50px 40px 50px;
+}
+.userCard > .picture-text > .picture > img{
+  width: 300px;
+  height: 350px;
+  /* border: 1px solid blueviolet; */
+}
+.clearfix > .picture ,
+.clearfix > .text{
+  float: left;
+}
+
+.userCard > .picture-text > .text{
+  margin-left: 60px;
+  width: 480px;
+}
+.userCard > .picture-text > .text  .welcome{
+  display: inline-block;
+  background-color: #E8676B;
+  padding: 5px 12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 28px;
+}
+.userCard > .picture-text > .text .triangle{
+  position: absolute;
+  top: 100%;
+  left: 5px;
+  border: 10px solid transparent;
+  width: 0px;
+  border-top-width: 0px;
+  border-left-color: #E8676B;
+}
+.userCard > .picture-text > .text h1{
+  margin-bottom: 8px; 
+}
+.userCard > .picture-text > .text p{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.userCard > .picture-text > .text hr{
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+.userCard > .picture-text > .text dl{
+  line-height: 30px;
+}
+.userCard > .picture-text > .text dl dt,
+.userCard > .picture-text > .text dl dd{
+  float: left;
+  font-size: 14px;
+  display: inline-block;
+  
+
+}
+.userCard > .picture-text > .text dl dt{
+  width: 30%;
+  font-weight: 700;
+}
+
+.userCard > .picture-text > .text dl dd{
+  width: 70%;
+  color: #9da0a7;
+}
+
+/* media style */
+.userCard > .media{
+  background-color: #E8676B;
+  text-align: center; 
+   /* 内容居中 */
+}
+.userCard > .media > a{
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 20px;
+  padding: 13px 0px; 
+  width: 46px;
+  margin: 20px 15px;
+  /* border: 1px solid blue; */
+}
+.userCard > .media > a:hover{
+  background-color: #D05C60;
+}
+.userCard > .media > a > svg{
+  fill: white;
+  height: 20px; 
+  width: 20px;
+  vertical-align: top;
+  /* border: 1px solid black; */
+}
+
+
