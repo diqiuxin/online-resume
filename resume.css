@@ -330,8 +330,13 @@ section ol{
   border: 1px solid black;
   margin: 20px 10px;
 }
+.productions > .jobs > div{
+  display: inline-block;
+  vertical-align: top;
+}
+
 .productions > .jobs > .big,
-.productions > .jobs > .small{
+.productions > .jobs .small{
   margin: 10px;
 }
 .productions > .jobs > .big{
@@ -339,13 +344,14 @@ section ol{
   width: 500px;
   height: 500px;
 }
-.productions > .jobs > .small{
+.productions > .jobs .small{
   width: 240px;
   height: 240px;
 }
-.productions > .jobs > .small-1{
+.productions > .jobs .small-1{
   background-image: url("./img/2.jpg");
+  margin-bottom: 20px;
 }
-.productions > .jobs > .small-2{
+.productions > .jobs .small-2{
   background-image: url("./img/3.jpg");
 }
