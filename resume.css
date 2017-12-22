@@ -111,7 +111,7 @@ body>main{
 .userCard > .pictureText > .picture > img{
   width: 300px;
   height: 350px;
-  /* border: 1px solid blueviolet; */
+  border: 1px solid blueviolet;
 }
 .clearfix > .picture ,
 .clearfix > .text{
@@ -239,7 +239,6 @@ section.productions{
   margin: 0px auto;
   text-align: center;
   padding: 30px 0px;
-  border: 1px solid red;  
 }
 section.skills > h2,
 section.productions > h2{
@@ -312,7 +311,7 @@ section ol{
   height: 5px;
   background-color: #E8676B;
   border-radius: 3px;
-  transition: all 0.3s;
+  transition: all 0.8s;
 }
 .productions > nav > .bar > .bar-inner-1{
   width: 65px;
@@ -326,20 +325,20 @@ section ol{
   width: 135px;
   margin-left: 145px; 
 }
+
+/* productions jobs style */
 .productions > .jobs{
-  border: 1px solid black;
   margin: 20px 10px;
 }
 .productions > .jobs > div{
   display: inline-block;
   vertical-align: top;
 }
-
-.productions > .jobs > .big,
+.productions > .jobs .big,
 .productions > .jobs .small{
   margin: 10px;
 }
-.productions > .jobs > .big{
+.productions > .jobs .big{
   background-image: url("./img/1.jpg");
   width: 500px;
   height: 500px;
@@ -350,8 +349,16 @@ section ol{
 }
 .productions > .jobs .small-1{
   background-image: url("./img/2.jpg");
-  margin-bottom: 20px;
 }
 .productions > .jobs .small-2{
   background-image: url("./img/3.jpg");
+}
+.productions > div.jobs div.marginB-20{
+  margin-bottom: 20px;
+}
+.productions > div.jobs div.hide{
+  display: none;
+}
+.productions > .jobs > div > .inline-block{
+  display: inline-block;
 }
