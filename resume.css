@@ -111,7 +111,7 @@ body>main{
 .userCard > .pictureText > .picture > img{
   width: 300px;
   height: 350px;
-  border: 1px solid blueviolet;
+  /* border: 1px solid blueviolet; */
 }
 .clearfix > .picture ,
 .clearfix > .text{
