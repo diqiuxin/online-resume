@@ -1,258 +1,115 @@
 /* initial style */
-*{
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-color: #EFEFEF;
-  color: black;
-}
-hr{ 
-  border: none;
-  border-top: 1px solid #DEDEDE;
-}
-a{
-  text-decoration: none;
-  color: white;
-}
+*{ margin: 0; padding: 0; }
+body{ background-color: #EFEFEF; color: black; }
+hr{ border: none; border-top: 1px solid #DEDEDE; }
+a{ text-decoration: none; color: white; }
 
 /* clearfix */
-.clearfix::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.clearfix > li{
-  float: left;
-}
-.clearfix > nav{
-  float: right;
-}
+.clearfix::after{ content: ""; display: block; clear: both; }
+.clearfix > li{ float:left; }
+.clearfix > nav{ float: right; }
 
 /* topNavBar style */
-.topNavBar{
-  padding: 20px 0px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* border: 1px solid red; */
-}
-.topNavBarInner{
-  padding: 0px 15px;
-}
+.topNavBar{ padding: 20px 0px; position: fixed; top: 0; left: 0; width: 100%; color: #CCCED1; transition: all 1s; z-index: 1; }
+.topNavBar.sticky{ background-color: white; padding: 0px 0px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7); color: #3d4451; }
+.topNavBarInner{ padding: 0px 15px; }
 
 /* topNavBar logo style */
-.topNavBar .logo > .rs ,
-.topNavBar .logo > .card{
-  font-size: 30px;
-  font-weight: 800;
-  font-style: normal;
-  font-family: "Arial Black"; 
-  display: inline-block;
-}
-.topNavBar .logo> .rs{
-  color: #E8676B;
-}
-.topNavBar .logo> .card{
-  color: #9A9DA2;
-  margin-left: 3px;
-}
+.topNavBar .logo > .rs , .topNavBar .logo > .card{ font-size: 30px; font-weight: 800; font-style: normal; font-family: "Arial Black"; display: inline-block; }
+.topNavBar .logo> .rs{ color: #E8676B; }
+.topNavBar .logo> .card{ color: #9A9DA2; margin-left: 3px; }
 
 /* topNavBar nav style */
-.topNavBar nav > ul{
-  list-style: none;
-  /* border: 1px solid white;  */
-}
-.topNavBar nav > ul > li{
-  margin: 0px 17px;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-}
-.topNavBar nav > ul > li:hover{
-  border-bottom: 3px solid #E8676B;
-}
-.topNavBar nav > ul > li > a{
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: #CCCED1;
-  padding: 12px 0px;
-  /* border: 1px solid blue; */
-}
+.topNavBar nav  ul{ list-style: none; }
+.topNavBar nav > ul > li{ margin: 0px 17px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; position: relative; }
+.topNavBar nav > ul > li:hover::after{ content: ''; display: block; position: absolute; top:100%; left: 0px; 
+  height: 3px; width: 100%; background-color: #E8676B; animation: nav_li_hover 0.5s linear; }
+@keyframes nav_li_hover{ 0%{ width:0; } 100%{ width:100%; } }
 
-/* banner style section */
-div.banner{
-  background-image: url("./img/banner.jpg");
-  background-position: center center;
-  background-size: cover;
-  /* border: 1px solid red; */
-  height: 520px;
-}
-div.banner > .mask{
-  background-color: rgba(0,0,0,0.7);
-  height: 520px;
-}
-
-/* userCard style */
-.userCard{
-  /* border: 1px solid red; */
-  background-color: #FFFFFF;
-  max-width: 942px;
-  margin: 0px auto;
-  box-shadow: 0px 2px 5px 1px rgb(189, 186, 186); 
-}
-body>main{
-  margin-top: -346px; 
-}
-.userCard > .pictureText{
-  padding: 58px 50px 40px 50px;
-}
-.userCard > .pictureText > .picture > img{
-  width: 300px;
-  height: 350px;
-  /* border: 1px solid blueviolet; */
-}
-.clearfix > .picture ,
-.clearfix > .text{
-  float: left;
-}
-
-/* text "hello" style */
-.userCard > .pictureText > .text{
-  margin-left: 60px;
-  width: 480px;
-}
-.userCard > .pictureText > .text  .welcome{
-  display: inline-block;
-  background-color: #E8676B;
-  padding: 5px 12px;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 700;
-  position: relative;
-  margin-bottom: 28px;
-}
-.userCard > .pictureText > .text .triangle{
+.topNavBar nav > ul .submenu{
+  display: none;
   position: absolute;
   top: 100%;
-  left: 5px;
-  border: 10px solid transparent;
-  width: 0px;
-  border-top-width: 0px;
-  border-left-color: #E8676B;
+  right: 0;
+  
+  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.7); 
+  transition: all 1s;
 }
+.topNavBar nav > ul > li.active .submenu{
+  display: block;
+  background-color: white;
+  animation: nav_submanu 0.3s linear;
+}
+@keyframes nav_submanu{
+  0%{margin-right:100%; }
+  100%{margin-right: 0;}
+}
+.topNavBar nav > ul > li .submenu li{
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+.topNavBar nav > ul > li .submenu li:hover{
+  background-color: rgba(0,0,0,0.4);
+  color: inherit;
+}
+
+
+.topNavBar nav > ul > li > a{ display: block; font-size: 13px; font-weight: 700; color: inherit; padding: 12px 0px; }
+
+
+
+/* banner style section */
+div.banner{ background-image: url("./img/banner.jpg"); background-position: center center; background-size: cover; height: 520px; }
+div.banner > .mask{ background-color: rgba(0,0,0,0.7); height: 520px; }
+
+/* userCard style */
+.userCard{ background-color: #FFFFFF; max-width: 942px; margin: 0px auto; box-shadow: 0px 2px 5px 1px rgb(189, 186, 186); }
+body>main{ margin-top: -346px; }
+.userCard > .pictureText{ padding: 58px 50px 40px 50px; }
+.userCard > .pictureText > .picture > img{ width: 300px; height: 350px; }
+.clearfix > .picture , .clearfix > .text{ float: left; }
+
+/* text "hello" style */
+.userCard > .pictureText > .text{ margin-left: 60px; width: 480px; }
+.userCard > .pictureText > .text  .welcome{ display: inline-block; background-color: #E8676B; padding: 5px 12px; color: #FFFFFF;
+  font-size: 14px; font-weight: 700; position: relative; margin-bottom: 28px; }
+.userCard > .pictureText > .text .triangle{ position: absolute; top: 100%; left: 5px; border: 10px solid transparent;
+  width: 0px; border-top-width: 0px; border-left-color: #E8676B; }
 
 /* text style */
-.userCard > .pictureText > .text h1{
-  margin-bottom: 8px; 
-}
-.userCard > .pictureText > .text p{
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.1;
-}
-.userCard > .pictureText > .text hr{
-  margin-top: 25px;
-  padding-top: 25px;
-}
-.userCard > .pictureText > .text dl{
-  line-height: 30px;
-}
+.userCard > .pictureText > .text h1{ margin-bottom: 8px; }
+.userCard > .pictureText > .text p{ font-size: 18px; font-weight: 400; line-height: 1.1; }
+.userCard > .pictureText > .text hr{ margin-top: 25px; padding-top: 25px; }
+.userCard > .pictureText > .text dl{ line-height: 30px; }
 .userCard > .pictureText > .text dl dt,
-.userCard > .pictureText > .text dl dd{
-  float: left;
-  font-size: 14px;
-  display: inline-block;
-}
-.userCard > .pictureText > .text dl dt{
-  width: 30%;
-  font-weight: 700;
-}
-.userCard > .pictureText > .text dl dd{
-  width: 70%;
-  color: #9da0a7;
-}
+.userCard > .pictureText > .text dl dd{ float: left; font-size: 14px; display: inline-block; }
+.userCard > .pictureText > .text dl dt{ width: 30%; font-weight: 700; }
+.userCard > .pictureText > .text dl dd{ width: 70%; color: #9da0a7; }
 
 /* media style */
-.userCard > .media{
-  background-color: #E8676B;
-  text-align: center; 
-   /* 内容居中 */
-}
-.userCard > .media > a{
-  display: inline-block;
-  border-radius: 50%;
-  line-height: 20px;
-  padding: 13px 0px; 
-  width: 46px;
-  margin: 20px 15px;
-  /* border: 1px solid blue; */ 
-  transition: background-color 0.5s;
-}
-.userCard > .media > a:hover{
-  background-color: #D05C60;
-}
-.userCard > .media > a > svg{
-  color: white;
-  /* fill: white; */
-  font-size: 20px;
-  /* height: 20px;  */
-  /* width: 20px; */
-  vertical-align: top;
-  /* border: 1px solid black; */
-}
+.userCard > .media{ background-color: #E8676B; text-align: center; /* 内容居中 */ }
+.userCard > .media > a{ display: inline-block; border-radius: 50%; line-height: 20px; padding: 13px 0px; width: 46px; margin: 20px 15px; transition: background-color 0.5s; }
+.userCard > .media > a:hover{ background-color: #D05C60; }
+.userCard > .media > a > svg{ color: white; /* fill: white; */ font-size: 20px; /* height: 20px;  */ /* width: 20px; */ vertical-align: top; }
 
 /* button style */
 main > .downloadWarpper {
   text-align: center;
 }
-main > .downloadWarpper > .download{
-  display: inline-block;
-  color: rgb(61, 68, 81);
-  font-size: 13px;
-  font-weight: bold;
-  padding: 21px 55px; 
-  margin: 35px;
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 2px;
-    
-}
-main > .downloadWarpper > .download:hover{
-  box-shadow: 0px 3px 13px 2px rgb(197, 194, 194);
-}
+main > .downloadWarpper > .download{ display: inline-block; color: rgb(61, 68, 81); font-size: 13px; font-weight: bold;
+  padding: 21px 55px; margin: 35px; border: 1px solid rgba(0,0,0,0.3); border-radius: 2px; }
+main > .downloadWarpper > .download:hover{ box-shadow: 0px 3px 13px 2px rgb(197, 194, 194); }
 
 /* self-introduction style */
-main > p.selfIntroduction{
-  max-width: 942px;
-  margin: 0px auto;
-  text-align: center;
-  line-height:1.8;
-  font-family: "楷体";
-  font-size: 22px;
-}
+main > p.selfIntroduction{ max-width: 942px; margin: 0px auto; text-align: center; line-height:1.8; font-family: "楷体"; font-size: 22px; }
 
 /* skills and production style */
 section.skills,
-section.productions{
-  max-width: 942px;
-  margin: 0px auto;
-  text-align: center;
-  padding: 30px 0px;
-}
+section.productions{ max-width: 942px; margin: 0px auto; text-align: center; padding: 30px 0px; }
 section.skills > h2,
-section.productions > h2{
-  font-size: 28px;
-  color: #3D4451;
-  padding: 20px 0px 30px 0px;
-}
-section.skills > div{
-  background-color: white;
-  box-shadow: 0px 2px 6px 1px rgb(187, 187, 187);
-}
-section.skills  ol{
-  padding: 40px 35px;
-}
+section.productions > h2{ font-size: 28px; color: #3D4451; padding: 20px 0px 30px 0px; }
+section.skills > div{ background-color: white; box-shadow: 0px 2px 6px 1px rgb(187, 187, 187); }
+section.skills  ol{ padding: 40px 35px; }
 section.skills  ol > li{
   display: inline-block;
   text-align: left;

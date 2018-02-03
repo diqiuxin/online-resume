@@ -7,6 +7,7 @@
   <title>Online Resume</title>
   <link rel="stylesheet" href="./resume.css">
   <script src="./iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <style type="text/css">
     .icon {
        width: 1em; height: 1em;
@@ -41,10 +42,10 @@
     #loading-page{
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.75);
       position: fixed;
       top: 0px; left: 0px;
-      z-index: 1;
+      z-index: 100;
     }
     #loading-page.active{
       display: none;
@@ -57,20 +58,34 @@
     <div class="loading"></div>
   </div>
   <!-- 顶部导航条 -->
-  <div class="topNavBar">
+  <div id="topNav" class="topNavBar">
     <div class="topNavBarInner clearfix">
       <a class="logo" href="#" alt="logo">
         <span class="rs">RS</span><span class="card">card</span>
       </a>
       <nav class="">
         <ul class="clearfix">
-          <li><a href="#">关 于</a></li>
-          <li><a href="#">技 能</a></li>
-          <li><a href="#">作 品</a></li>
-          <li><a href="#">博 客</a></li>
-          <li><a href="#">日 历</a></li>
-          <li><a href="#">联 系 方 式</a></li>
-          <li><a href="#">其 他</a></li>
+          <li><a href="#guan-yu">关 于</a></li>
+          <li><a href="#ji-neng">技 能</a></li>
+          <li >
+            <a href="#zuo-pin">作 品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#bo-ke">博 客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
+          </li>
+          <li><a href="#ri-li">日 历</a></li>
+          <li><a href="#lian-xi">联 系 方 式</a></li>
+          <li><a href="#qi-ta">其 他</a></li>
         </ul> 
       </nav>
     </div>
@@ -80,7 +95,7 @@
     <div class="mask"></div>
   </div>
   <!-- 主要内容 -->
-  <main>
+  <main id="guan-yu">
     <div class="userCard">
       <div class="pictureText clearfix">
         <div class="picture">
@@ -148,7 +163,7 @@
     </p>
   </main>
   <!-- 技能部分 -->
-  <section class="skills">
+  <section id="ji-neng" class="skills">
     <h2>技能</h2>
     <div>
       <ol class="clearfix">
@@ -162,7 +177,7 @@
     </div>
   </section>
   <!-- 作品部分 -->
-  <section class="productions">
+  <section id="zuo-pin" class="productions">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -202,17 +217,6 @@
       jobSmallTwo.className = "hide";
     }
   </script>
-  <!-- loading page animation-js -->
-  <script>
-    // console.log('onload');
-    // window.onload= function(){
-    //   console.log('active');
-    //   let loading = document.getElementById('loading-page');
-    //   loading.className = 'active';
-    // }
-    setTimeout(function(){
-      document.getElementById('loading-page').className = 'active';
-    },2500);
-  </script>
+  <script src="./main.js"></script>
 </body>
 </html>
