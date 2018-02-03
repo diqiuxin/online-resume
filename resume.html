@@ -32,9 +32,9 @@
       margin: auto;
       border-radius: 50%;
       background-color: black;
-      animation: loading 1.5s linear infinite;
+      animation: loading 0.7s linear infinite;
     }
-    .loading::after{ animation-delay: 0.75s; }
+    .loading::after{ animation-delay: 0.35s; }
     @keyframes loading{
       0%{ width: 0px;  height: 0px; opacity: 1;}
       100%{width: 100px;height: 100px; opacity: 0;}
@@ -95,8 +95,8 @@
     <div class="mask"></div>
   </div>
   <!-- 主要内容 -->
-  <main id="guan-yu">
-    <div class="userCard">
+  <main >
+    <div data-x id="guan-yu" class="userCard">
       <div class="pictureText clearfix">
         <div class="picture">
             <img src="./img/avatar.jpg" alt="头像">
@@ -163,7 +163,7 @@
     </p>
   </main>
   <!-- 技能部分 -->
-  <section id="ji-neng" class="skills">
+  <section data-x id="ji-neng" class="skills">
     <h2>技能</h2>
     <div>
       <ol class="clearfix">
@@ -177,7 +177,7 @@
     </div>
   </section>
   <!-- 作品部分 -->
-  <section id="zuo-pin" class="productions">
+  <section data-x id="zuo-pin" class="productions">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">

@@ -8,7 +8,31 @@
 // }
 setTimeout(function(){
   document.getElementById('loading-page').className = 'active';
-},1500);
+},1000);
+
+// 滚动前的动画
+animationUpInit();
+
+function animationUpInit(){
+  let data = document.querySelectorAll("[data-x]");
+  let _top = window.scrollY; 
+  let  minIndex = 0;
+  for(let i=1;i<data.length;i++){
+    data[i].classList.add("animation-up-null");
+    if( Math.abs(_top - data[minIndex].offsetTop) > Math.abs(_top - data[i].offsetTop)){
+      minIndex = i;
+    }
+  }
+  data[minIndex].classList.remove("animation-up-null");
+  data[minIndex].classList.add("animation-up");
+
+  // // kills 进度条初始化  进度条当前是 data[1]
+  // let kills_t = document.querySelectorAll("#ji-neng ol li");
+  // console.log(kills_t);
+  // for(let i=0; i<kills_t.length;i++){
+  //   kills_t[i].classList.add("after-init");
+  // }
+}
 
 // nav 滚动动画
 let topnav = document.getElementById('topNav');
@@ -18,18 +42,62 @@ window.onscroll = function(){
   }else{
     topNav.classList.remove('sticky');
   }
+
+  //nav_li 同步跟进动画
+  let data = document.querySelectorAll("[data-x]");
+  let _top = window.scrollY; 
+  let  minIndex = 0;
+  for(let i=1;i<data.length;i++){
+    if( Math.abs(_top - data[minIndex].offsetTop) > Math.abs(_top - data[i].offsetTop)){
+      minIndex = i;
+    }
+  }
+
+  // if minIndex=1 启动kills进度条动画
+  // let temp = true;
+  // if(minIndex == 1 && temp){
+  //   temp = false;
+  //   let kills_t = document.querySelectorAll("#ji-neng ol li");
+  //   for(let i=0; i<kills_t.length;i++){
+  //     kills_t[i].classList.remove("after-init");
+  //     kills_t[i].classList.add("after-");
+  //   }
+  // }
+
+  // if minIndex=1 启动kills进度条动画
+  let temp = true;
+  if(minIndex == 1 && temp){
+    temp = false;
+    data[minIndex].classList.add("onset");
+  }
+
+  
+
+
+  let id = data[minIndex].id;
+  let a = document.querySelector('a[href="#' + id + '"]');
+  let li = a.parentElement;
+  let liList = li.parentElement.children; 
+  for(let i =0; i<liList.length;i++){
+    liList[i].classList.remove("active-li");
+  }
+  li.classList.add("active-li");
+
+  //minIndex 是当前的查看元素
+  data[minIndex].classList.remove("animation-up-null");
+  data[minIndex].classList.add("animation-up");
+    
 }
 
-// nav hover动画
+// nav submenu hover 动画
 let submenu = document.getElementsByClassName('submenu');
 for(let i=0; i < submenu.length;i++){
   let submenuParent = submenu[i].parentElement;
   submenuParent.onmouseenter = function(event){
-    event.target.classList.add("active");
-
+    event.target.classList.add("active-sub");
   }
   submenuParent.onmouseleave = function(event){
-    event.target.classList.remove("active");
+    event.target.classList.remove("active-sub");
   }
 }
 
@@ -46,6 +114,10 @@ for(let i=0;i<nav_a.length;i++){
     let top = ele.offsetTop - 70;
     let _top = window.scrollY;
 
+
+
+
+    //
     // let interval = setInterval(() =>{
     //   if(_top > top){
     //     _top -= 10;
@@ -75,3 +147,4 @@ for(let i=0;i<nav_a.length;i++){
       .start(); 
   }
 } 
+

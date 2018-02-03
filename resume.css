@@ -22,20 +22,26 @@ a{ text-decoration: none; color: white; }
 /* topNavBar nav style */
 .topNavBar nav  ul{ list-style: none; }
 .topNavBar nav > ul > li{ margin: 0px 17px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; position: relative; }
-.topNavBar nav > ul > li:hover::after{ content: ''; display: block; position: absolute; top:100%; left: 0px; 
+.topNavBar nav > ul > li:hover::after,
+.topNavBar nav > ul > li.active-li::after{ content: ''; display: block; position: absolute; top:100%; left: 0px; 
   height: 3px; width: 100%; background-color: #E8676B; animation: nav_li_hover 0.5s linear; }
 @keyframes nav_li_hover{ 0%{ width:0; } 100%{ width:100%; } }
+
+/* 动画四剑客 */
+  /* transform:  */
+  /* transition:  */
+  /* animation:  */
+  /* js */
 
 .topNavBar nav > ul .submenu{
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
-  
   box-shadow: 0 2px 2px 0px rgba(0,0,0,0.7); 
   transition: all 1s;
 }
-.topNavBar nav > ul > li.active .submenu{
+.topNavBar nav > ul > li.active-sub .submenu{
   display: block;
   background-color: white;
   animation: nav_submanu 0.3s linear;
@@ -56,6 +62,21 @@ a{ text-decoration: none; color: white; }
 
 .topNavBar nav > ul > li > a{ display: block; font-size: 13px; font-weight: 700; color: inherit; padding: 12px 0px; }
 
+[data-x].animation-up-null{
+  transform: translateY(200px);
+}
+
+[data-x].animation-up{
+  animation: up 1s;
+}
+@keyframes up{
+  0%{
+    transform: translateY(200px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
 
 
 /* banner style section */
@@ -137,7 +158,16 @@ section.skills  ol > li::before{
 section.skills  ol > li::after{
   background-color: #E8676B;
   /* border-top: 5px solid #E8676B; */
+  width: 0%;
+}
+section.skills.onset  ol > li::after{
+  background-color: #E8676B;
   width: 60%;
+  animation: afterInit 1s;
+}
+@keyframes afterInit{
+  0%{width: 0%;}
+  100%{width: 60%;}
 }
 section ol{
   list-style: none;
