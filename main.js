@@ -1,11 +1,4 @@
 // loading page animation-js 
-
-// console.log('onload');
-// window.onload= function(){
-//   console.log('active');
-//   let loading = document.getElementById('loading-page');
-//   loading.className = 'active';
-// }
 setTimeout(function(){
   document.getElementById('loading-page').className = 'active';
 },1000);
@@ -25,13 +18,6 @@ function animationUpInit(){
   }
   data[minIndex].classList.remove("animation-up-null");
   data[minIndex].classList.add("animation-up");
-
-  // // kills 进度条初始化  进度条当前是 data[1]
-  // let kills_t = document.querySelectorAll("#ji-neng ol li");
-  // console.log(kills_t);
-  // for(let i=0; i<kills_t.length;i++){
-  //   kills_t[i].classList.add("after-init");
-  // }
 }
 
 // nav 滚动动画
@@ -54,25 +40,11 @@ window.onscroll = function(){
   }
 
   // if minIndex=1 启动kills进度条动画
-  // let temp = true;
-  // if(minIndex == 1 && temp){
-  //   temp = false;
-  //   let kills_t = document.querySelectorAll("#ji-neng ol li");
-  //   for(let i=0; i<kills_t.length;i++){
-  //     kills_t[i].classList.remove("after-init");
-  //     kills_t[i].classList.add("after-");
-  //   }
-  // }
-
-  // if minIndex=1 启动kills进度条动画
   let temp = true;
   if(minIndex == 1 && temp){
     temp = false;
     data[minIndex].classList.add("onset");
   }
-
-  
-
 
   let id = data[minIndex].id;
   let a = document.querySelector('a[href="#' + id + '"]');
@@ -86,7 +58,6 @@ window.onscroll = function(){
   //minIndex 是当前的查看元素
   data[minIndex].classList.remove("animation-up-null");
   data[minIndex].classList.add("animation-up");
-    
 }
 
 // nav submenu hover 动画
@@ -113,22 +84,6 @@ for(let i=0;i<nav_a.length;i++){
     let ele = document.querySelector(href);
     let top = ele.offsetTop - 70;
     let _top = window.scrollY;
-
-
-
-
-    //
-    // let interval = setInterval(() =>{
-    //   if(_top > top){
-    //     _top -= 10;
-    //     window.scrollTo(0 , _top);
-    //     if(_top < top )window.clearInterval(interval);  //动画停止方式
-    //   }else{
-    //     _top += 10;
-    //     window.scrollTo(0 , _top);
-    //     if(_top > top )window.clearInterval(interval);
-    //   }
-    // },10);
 
     // 引入 Tween.js  url：https://github.com/tweenjs/tween.js/
     // 缓动函数库 url: http://easings.net/zh-cn
