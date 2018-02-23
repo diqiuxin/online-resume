@@ -3,6 +3,7 @@
 body{ background-color: #EFEFEF; color: black; }
 hr{ border: none; border-top: 1px solid #DEDEDE; }
 a{ text-decoration: none; color: white; }
+.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
 
 /* clearfix */
 .clearfix::after{ content: ""; display: block; clear: both; }
@@ -10,7 +11,7 @@ a{ text-decoration: none; color: white; }
 .clearfix > nav{ float: right; }
 
 /* topNavBar style */
-.topNavBar{ padding: 20px 0px; position: fixed; top: 0; left: 0; width: 100%; color: #CCCED1; transition: all 1s; z-index: 1; }
+.topNavBar{ padding: 20px 0px; position: fixed; top: 0; left: 0; width: 100%; color: #CCCED1; transition: all 1s; z-index: 99; }
 .topNavBar.sticky{ background-color: white; padding: 0px 0px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7); color: #3d4451; }
 .topNavBarInner{ padding: 0px 15px; }
 
@@ -80,7 +81,7 @@ a{ text-decoration: none; color: white; }
 
 
 /* banner style section */
-div.banner{ background-image: url("./img/banner.jpg"); background-position: center center; background-size: cover; height: 520px; }
+div.banner{ background-image: url("../img/banner.jpg"); background-position: center center; background-size: cover; height: 520px; }
 div.banner > .mask{ background-color: rgba(0,0,0,0.7); height: 520px; }
 
 /* userCard style */
