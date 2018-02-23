@@ -114,9 +114,7 @@ body>main{ margin-top: -346px; }
 .userCard > .media > a > svg{ color: white; /* fill: white; */ font-size: 20px; /* height: 20px;  */ /* width: 20px; */ vertical-align: top; }
 
 /* button style */
-main > .downloadWarpper {
-  text-align: center;
-}
+main > .downloadWarpper {text-align: center;}
 main > .downloadWarpper > .download{ display: inline-block; color: rgb(61, 68, 81); font-size: 13px; font-weight: bold;
   padding: 21px 55px; margin: 35px; border: 1px solid rgba(0,0,0,0.3); border-radius: 2px; }
 main > .downloadWarpper > .download:hover{ box-shadow: 0px 3px 13px 2px rgb(197, 194, 194); }
@@ -131,121 +129,23 @@ section.skills > h2,
 section.productions > h2{ font-size: 28px; color: #3D4451; padding: 20px 0px 30px 0px; }
 section.skills > div{ background-color: white; box-shadow: 0px 2px 6px 1px rgb(187, 187, 187); }
 section.skills  ol{ padding: 40px 35px; }
-section.skills  ol > li{
-  display: inline-block;
-  text-align: left;
-  font-size: 13px;
-  color: rgb(56, 56, 58);
-  width: 45%;
-  position: relative;
-  margin: 20px 15px;
-}
+section.skills  ol > li{display: inline-block;text-align: left;
+  font-size: 13px; color: rgb(56, 56, 58);width: 45%; position: relative;margin: 20px 15px;}
 section.skills  ol > li::before,
-section.skills  ol > li::after{
-  content: "";
-  position: absolute;
-  border: none;
-  height: 5px;
-  border-radius: 3px;
-  top: 120%;
-  left: 0px;
-}
-section.skills  ol > li::before{
-  background-color: #FAE1E1;
-  /* border-top: 5px solid #FAE1E1;   */
-  width: 100%;
-}
-section.skills  ol > li::after{
-  background-color: #E8676B;
-  /* border-top: 5px solid #E8676B; */
-  width: 0%;
-}
-section.skills.onset  ol > li::after{
-  background-color: #E8676B;
-  width: 60%;
-  animation: afterInit 1s;
-}
-@keyframes afterInit{
-  0%{width: 0%;}
-  100%{width: 60%;}
-}
-section ol{
-  list-style: none;
-}
+section.skills  ol > li::after{content: ""; position: absolute; border: none;
+ top: 120%; left: 0px; height: 5px; border-radius: 3px;}
+section.skills  ol > li::before{ background-color: #FAE1E1; width: 100%; }
+section.skills  ol > li::after{background-color: #E8676B; width: 0%;}
+section.skills.onset  ol > li::after{ background-color: #E8676B; width: 60%; animation: afterInit 1s;}
+@keyframes afterInit{0%{width: 0%;} 100%{width: 60%;}}
+section ol{ list-style: none;}
 
-/* productions style */
-.productions > nav{
-  text-align: center;  
-}
-.productions > nav > ol{
-  display: inline-block;
-  vertical-align: top;
-}
-.productions > nav > ol > li{
-  padding: 0px 20px;
-  cursor: pointer;
-}
-/* productions style */
-.productions > nav > .bar{
-  /* border: 1px solid red; */
-  margin: 10px auto;
-  background-color: #FAE1E1;
-  height: 5px;
-  width: 280px;
-  border-radius: 3px;
-}
-.productions > nav > .bar > .bar-inner{
-  height: 5px;
-  background-color: #E8676B;
-  border-radius: 3px;
-  transition: all 0.8s;
-}
-.productions > nav > .bar > .bar-inner-1{
-  width: 65px;
-  margin-left: 0px; 
-}
-.productions > nav > .bar > .bar-inner-2{
-  width: 65px;
-  margin-left: 74px; 
-}
-.productions > nav > .bar > .bar-inner-3{
-  width: 135px;
-  margin-left: 145px; 
-}
-
-/* productions jobs style */
-.productions > .jobs{
-  margin: 20px 10px;
-}
-.productions > .jobs > div{
-  display: inline-block;
-  vertical-align: top;
-}
-.productions > .jobs .big,
-.productions > .jobs .small{
-  margin: 10px;
-}
-.productions > .jobs .big{
-  background-image: url("./img/1.jpg");
-  width: 500px;
-  height: 500px;
-}
-.productions > .jobs .small{
-  width: 240px;
-  height: 240px;
-}
-.productions > .jobs .small-1{
-  background-image: url("./img/2.jpg");
-}
-.productions > .jobs .small-2{
-  background-image: url("./img/3.jpg");
-}
-.productions > div.jobs div.marginB-20{
-  margin-bottom: 20px;
-}
-.productions > div.jobs div.hide{
-  display: none;
-}
-.productions > .jobs > div > .inline-block{
-  display: inline-block;
-}
+/* productions jobs style ---Swiper */
+.productions > .swiper{ margin: 20px 10px; position: relative;}
+.swiper-container { width: 780px;height: 520px; background-color: white;
+ box-shadow: 0px 2px 6px 2px rgb(187, 187, 187); }
+.swiper-button-prev,
+.swiper-button-next{ background-color: white; margin: 0 -50px;
+  width: 60px; height: 60px;border-radius: 50%; }
+.swiper-scrollbar{ background-color: #FAE1E1; top: 5px; left: 0;}
+.swiper-scrollbar-drag{ background-color:#E8676B; }

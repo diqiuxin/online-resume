@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Online Resume</title>
-  <link rel="stylesheet" href="./resume.css">
   <script src="./iconfont.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
   <style type="text/css">
     .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
     .loading{ width: 100%; height: 100%; position: relative; }
     .loading::before , .loading::after{
-      content: ''; width：0; height: 0;
+      content: ''; width: 0; height: 0;
       position: absolute; top: 0; right:0; bottom: 0; left: 0;
       margin: auto;
       border-radius: 50%;
@@ -25,6 +25,7 @@
       position: fixed; top: 0px; left: 0px; z-index: 100; }
     #loading-page.active{ display: none; }
   </style>
+  <link rel="stylesheet" href="./resume.css">
 </head>
 <body>
   <!-- loading page animation -->
@@ -153,44 +154,55 @@
   <!-- 作品部分 -->
   <section data-x id="zuo-pin" class="productions">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="production1">所有</li>
-        <li id="production2">框架</li>
-        <li id="production3">原生JS &amp; CSS</li>
-      </ol>
-      <div class="bar">
-        <div class="bar-inner bar-inner-1" id="productionBar"></div>
+    <!-- 作品部分 Swiper插件 -->
+    <div class="swiper">
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <img src="./img/production/nav_1.jpg" class="swiper-slide">
+          <img src="./img/production/nav_2.jpg" class="swiper-slide">
+          <img src="./img/production/nav_3.jpg" class="swiper-slide">
+          <img src="./img/production/nav_4.jpg" class="swiper-slide">
+          <img src="./img/production/nav_5.jpg" class="swiper-slide">
+        </div>
+        <!-- scrollbar -->
+        <div class="swiper-scrollbar"></div>
       </div>
-    </nav>
-    <div class="jobs">
-      <div class="big" id="jobBig"></div>
-      <div>
-        <div class="small small-1 marginB-20" id="jobSmallOne"></div>
-        <div class="small small-2" id="jobSmallTwo"></div>
-      </div>
+      <!-- navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
+
   <script>
-    production1.onclick = function(){
-      productionBar.className = "bar-inner bar-inner-1";
-      jobBig.className = "big";
-      jobSmallOne.className = "small small-1 marginB-20";
-      jobSmallTwo.className = "small small-2";
-    }
-    production2.onclick = function(){
-      productionBar.className = "bar-inner bar-inner-2";
-      jobBig.className = "hide";
-      jobSmallOne.className = "small small-1 inline-block";
-      jobSmallTwo.className = "small small-2 inline-block";
-    }
-    production3.onclick = function(){
-      productionBar.className = "bar-inner bar-inner-3";
-      jobBig.className = "big";
-      jobSmallOne.className = "hide";
-      jobSmallTwo.className = "hide";
+    window.onload = function(){
+      var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
     }
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
