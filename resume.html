@@ -38,6 +38,7 @@
               <li>作品3</li>
             </ul>
           </li>
+          <li><a href="#liu-yan">留言板</a></li>
           <li>
             <a href="#bo-ke">博 客</a>
             <ul class="submenu">
@@ -165,6 +166,22 @@
       <div class="swiper-button-next"></div>
     </div>
   </section>
+
+  <!-- Leave-message -->
+  <section data-x id="liu-yan" class="leave-message">
+    <h2>留言板</h2>
+    <div>
+      <ol class="message-ol">
+      </ol>
+    </div>
+    <form action="" class="message-form">
+      <label>姓名：</label>
+      <input type="text" name="name">
+      <label>留言内容：</label>
+      <input type="text" name="content">
+      <input type="submit" value="留言">
+    </form>
+  </section>
   
   <!-- Temporary-footern -->
   <section>
@@ -176,11 +193,13 @@
     <div class="footer"></div>
   </section>
 
+  <script src="./js/loading.js"></script>    
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
-  <script src="./js/loading.js"></script>  
+  <script src="http://cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
   <script src="./js/navigation-animation.js"></script>
   <script src="./js/production-Swiper.js"></script>
   <script src="./js/navigation-skip.js"></script>
+  <script src="./js/leave-message.js"></script>
 
 </body>
 </html>

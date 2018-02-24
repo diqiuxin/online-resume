@@ -125,9 +125,12 @@ main > p.selfIntroduction{ max-width: 942px; margin: 0px auto; text-align: cente
 
 /* skills and production style */
 section.skills,
-section.productions{ max-width: 942px; margin: 0px auto; text-align: center; padding: 30px 0px; }
+section.productions,
+section.leave-message{ max-width: 942px; margin: 0px auto; text-align: center; padding: 30px 0px; }
 section.skills > h2,
-section.productions > h2{ font-size: 28px; color: #3D4451; padding: 20px 0px 30px 0px; }
+section.productions > h2,
+section.leave-message > h2{ font-size: 28px; color: #3D4451; padding: 20px 0px 30px 0px; }
+
 section.skills > div{ background-color: white; box-shadow: 0px 2px 6px 1px rgb(187, 187, 187); }
 section.skills  ol{ padding: 40px 35px; }
 section.skills  ol > li{display: inline-block;text-align: left;
@@ -150,3 +153,13 @@ section ol{ list-style: none;}
   width: 60px; height: 60px;border-radius: 50%; }
 .swiper-scrollbar{ background-color: #FAE1E1; top: 5px; left: 0;}
 .swiper-scrollbar-drag{ background-color:#E8676B; }
+
+
+/* leave message */
+section.leave-message > div{  box-shadow: 0px 2px 6px 1px rgb(187, 187, 187); }
+.leave-message .message-ol{ padding: 50px 30px; margin: 10px; }
+.leave-message .message-ol > li:nth-child(1){border-top: 1px solid #888; }
+.leave-message .message-ol > li{ 
+   border-bottom: 1px solid #888; background-color: rgba(0,0,0,0.02); text-align: left; text-overflow: clip;}
+.leave-message .message-ol > li .li-date{text-align: right;}
+.leave-message .message-form{margin: 30px 0 ;}
