@@ -1,6 +1,8 @@
 (function(){
   // loading page animation-js 
-  let view = document.getElementById('loading-page');
+  // let view = document.getElementById('loading-page');
+  let view = View('#loading-page');
+  
   let controller = {
     view: null,
     init: function(view){

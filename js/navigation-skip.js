@@ -1,6 +1,8 @@
 (function(){
   // navigation-skip
-  let view = document.querySelectorAll("nav > ul")[0];
+  // let view = document.querySelectorAll("nav > ul")[0];
+  let view = View("nav > ul");
+  
   let controller = {
     view: null,
     init: function(view){

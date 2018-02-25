@@ -1,10 +1,9 @@
 (function(){
-  let view = document.getElementById('topNav');
+  // let view = document.getElementById('topNav');
+  let view = View('#topNav');
+  
   let controller = {
     view: null,
-    data: {
-
-    },
     pageInit: function(){
       let data = document.querySelectorAll("[data-x]");
       let _top = window.scrollY; 

@@ -1,40 +1,14 @@
-// 第一个值得留恋的版本 <特殊保存>  // 此文件未引用
 !function(){
-
-  let view = document.querySelectorAll(".message-ol > li");
-
-  let model = {
-    APP_ID: '1pTDb3g24mArVqVI6tJ70j4W-gzGzoHsz',
-    APP_KEY: 'JbsyRzmBq0xU03hUkJWSlLSG',
-    init: function(){
-      AV.init({ appId: this.APP_ID, appKey: this.APP_KEY });
-    },
-    save: function({name,content,date}){
-      let Message = AV.Object.extend('Message');
-      let message = new Message();
-      return message.save({ //返回一个 Promise 对象
-        "name": name,
-        "content": content,
-        "date": date,
-      });
-    },
-    get: function(){  //返回一个 Promise 对象
-      var query = new AV.Query('Message');
-      return query.find();
-    },
-  };
-
-  let controller = {
-    view: null,
-    model: null,
+  let view = View(".message-ol > li");
+  let model = Model({
+    resourceName: "Message",
+  });
+  let controller = Controller({
     messageOl: document.querySelector(".message-ol"),
     myForm: document.querySelector(".message-form"),
     nameEle: document.querySelector(".message-form input[name='name']"),
     contentEle: document.querySelector(".message-form input[name='content']"),
     init: function(view,model){
-      this.view = view;
-      this.model = model;
-      this.model.init();
       this.initMessagePage();
       this.submitEvent();
     },
@@ -92,7 +66,7 @@
       let dateString = ({Y,M,D,h,m,s}) => {return `${Y}/${M}/${D}  ${h}:${m}:${s}`;}
       return dateString(dateObj);
     },
-  };
+  });
   controller.init(view,model);
 }.call();
 

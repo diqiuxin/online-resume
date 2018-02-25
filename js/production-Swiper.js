@@ -1,5 +1,7 @@
 (function(){
-  let view = document.getElementsByClassName('swiper')[0];
+  // let view = document.getElementsByClassName('swiper')[0];
+  let view = View('.swiper');
+  
   let controller = {
     view: null,
     setSwiper: {
